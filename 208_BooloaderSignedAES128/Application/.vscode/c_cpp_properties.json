@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/Core/inc",
+                "${workspaceFolder}../Shared/inc",
+                "${workspaceFolder}../Shared/Libraries/STM32F4xx_StdPeriph_Driver/inc",
+                "${workspaceFolder}../Shared/Libraries/CMSIS/Include",
+                "${workspaceFolder}../Shared//Libraries/CMSIS/Device/ST/STM32F4xx/Include",
+                "/usr/bin"
+            ],
+            "defines": [
+                "USE_STDPERIPH_DRIVER ",
+                "USE_HAL_DRIVER",
+                "STM32F439xx"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++20",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/Core/inc",
+                    "${workspaceFolder}../Shared/inc",
+                    "${workspaceFolder}../Shared/Libraries/STM32F4xx_StdPeriph_Driver/inc",
+                    "${workspaceFolder}../Shared/Libraries/CMSIS/Include",
+                    "${workspaceFolder}../Shared//Libraries/CMSIS/Device/ST/STM32F4xx/Include",
+                    "/usr/bin"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
+        }
+    ],
+    "version": 4
+}

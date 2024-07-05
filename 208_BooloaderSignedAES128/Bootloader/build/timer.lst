@@ -1,0 +1,356 @@
+ARM GAS  /tmp/ccjKaYQ1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 6
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"timer.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "../Shared/src/timer.c"
+  20              		.section	.text.Simple_Timer_Setup,"ax",%progbits
+  21              		.align	1
+  22              		.global	Simple_Timer_Setup
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	Simple_Timer_Setup:
+  28              	.LFB113:
+   1:../Shared/src/timer.c **** #include "timer.h"
+   2:../Shared/src/timer.c **** #include "delay.h"
+   3:../Shared/src/timer.c **** 
+   4:../Shared/src/timer.c **** void Simple_Timer_Setup(simpleTimer_t *timer, uint32_t waitTime,
+   5:../Shared/src/timer.c ****                         bool autoReset) {
+  29              		.loc 1 5 41
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 16
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33 0000 80B5     		push	{r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38 0002 84B0     		sub	sp, sp, #16
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 24
+  41 0004 00AF     		add	r7, sp, #0
+  42              	.LCFI2:
+  43              		.cfi_def_cfa_register 7
+  44 0006 F860     		str	r0, [r7, #12]
+  45 0008 B960     		str	r1, [r7, #8]
+  46 000a 1346     		mov	r3, r2
+  47 000c FB71     		strb	r3, [r7, #7]
+   6:../Shared/src/timer.c ****   timer->waitTime = waitTime;
+  48              		.loc 1 6 19
+  49 000e FB68     		ldr	r3, [r7, #12]
+  50 0010 BA68     		ldr	r2, [r7, #8]
+  51 0012 1A60     		str	r2, [r3]
+   7:../Shared/src/timer.c ****   timer->autoReset = autoReset;
+ARM GAS  /tmp/ccjKaYQ1.s 			page 2
+
+
+  52              		.loc 1 7 20
+  53 0014 FB68     		ldr	r3, [r7, #12]
+  54 0016 FA79     		ldrb	r2, [r7, #7]
+  55 0018 1A72     		strb	r2, [r3, #8]
+   8:../Shared/src/timer.c ****   timer->targetTime = waitTime + getTicks();
+  56              		.loc 1 8 34
+  57 001a FFF7FEFF 		bl	getTicks
+  58 001e 0246     		mov	r2, r0
+  59              		.loc 1 8 32 discriminator 1
+  60 0020 BB68     		ldr	r3, [r7, #8]
+  61 0022 1A44     		add	r2, r2, r3
+  62              		.loc 1 8 21 discriminator 1
+  63 0024 FB68     		ldr	r3, [r7, #12]
+  64 0026 5A60     		str	r2, [r3, #4]
+   9:../Shared/src/timer.c ****   timer->hasElapsed = false;
+  65              		.loc 1 9 21
+  66 0028 FB68     		ldr	r3, [r7, #12]
+  67 002a 0022     		movs	r2, #0
+  68 002c 5A72     		strb	r2, [r3, #9]
+  10:../Shared/src/timer.c **** }
+  69              		.loc 1 10 1
+  70 002e 00BF     		nop
+  71 0030 1037     		adds	r7, r7, #16
+  72              	.LCFI3:
+  73              		.cfi_def_cfa_offset 8
+  74 0032 BD46     		mov	sp, r7
+  75              	.LCFI4:
+  76              		.cfi_def_cfa_register 13
+  77              		@ sp needed
+  78 0034 80BD     		pop	{r7, pc}
+  79              		.cfi_endproc
+  80              	.LFE113:
+  82              		.section	.text.Simple_Timer_Elapsed,"ax",%progbits
+  83              		.align	1
+  84              		.global	Simple_Timer_Elapsed
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  89              	Simple_Timer_Elapsed:
+  90              	.LFB114:
+  11:../Shared/src/timer.c **** 
+  12:../Shared/src/timer.c **** bool Simple_Timer_Elapsed(simpleTimer_t *timer) {
+  91              		.loc 1 12 49
+  92              		.cfi_startproc
+  93              		@ args = 0, pretend = 0, frame = 24
+  94              		@ frame_needed = 1, uses_anonymous_args = 0
+  95 0000 80B5     		push	{r7, lr}
+  96              	.LCFI5:
+  97              		.cfi_def_cfa_offset 8
+  98              		.cfi_offset 7, -8
+  99              		.cfi_offset 14, -4
+ 100 0002 86B0     		sub	sp, sp, #24
+ 101              	.LCFI6:
+ 102              		.cfi_def_cfa_offset 32
+ 103 0004 00AF     		add	r7, sp, #0
+ 104              	.LCFI7:
+ 105              		.cfi_def_cfa_register 7
+ARM GAS  /tmp/ccjKaYQ1.s 			page 3
+
+
+ 106 0006 7860     		str	r0, [r7, #4]
+  13:../Shared/src/timer.c ****   uint32_t nowTime = getTicks();
+ 107              		.loc 1 13 22
+ 108 0008 FFF7FEFF 		bl	getTicks
+ 109 000c 7861     		str	r0, [r7, #20]
+  14:../Shared/src/timer.c ****   bool hasElapsed = nowTime >= timer->targetTime;
+ 110              		.loc 1 14 37
+ 111 000e 7B68     		ldr	r3, [r7, #4]
+ 112 0010 5B68     		ldr	r3, [r3, #4]
+ 113              		.loc 1 14 8
+ 114 0012 7A69     		ldr	r2, [r7, #20]
+ 115 0014 9A42     		cmp	r2, r3
+ 116 0016 2CBF     		ite	cs
+ 117 0018 0123     		movcs	r3, #1
+ 118 001a 0023     		movcc	r3, #0
+ 119 001c FB74     		strb	r3, [r7, #19]
+  15:../Shared/src/timer.c **** 
+  16:../Shared/src/timer.c ****   if (timer->hasElapsed) {
+ 120              		.loc 1 16 12
+ 121 001e 7B68     		ldr	r3, [r7, #4]
+ 122 0020 5B7A     		ldrb	r3, [r3, #9]	@ zero_extendqisi2
+ 123              		.loc 1 16 6
+ 124 0022 002B     		cmp	r3, #0
+ 125 0024 01D0     		beq	.L3
+  17:../Shared/src/timer.c ****     return false;
+ 126              		.loc 1 17 12
+ 127 0026 0023     		movs	r3, #0
+ 128 0028 18E0     		b	.L4
+ 129              	.L3:
+  18:../Shared/src/timer.c ****   }
+  19:../Shared/src/timer.c **** 
+  20:../Shared/src/timer.c ****   if (hasElapsed) {
+ 130              		.loc 1 20 6
+ 131 002a FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 132 002c 002B     		cmp	r3, #0
+ 133 002e 14D0     		beq	.L5
+  21:../Shared/src/timer.c ****     if (timer->autoReset) {
+ 134              		.loc 1 21 14
+ 135 0030 7B68     		ldr	r3, [r7, #4]
+ 136 0032 1B7A     		ldrb	r3, [r3, #8]	@ zero_extendqisi2
+ 137              		.loc 1 21 8
+ 138 0034 002B     		cmp	r3, #0
+ 139 0036 0DD0     		beq	.L6
+ 140              	.LBB2:
+  22:../Shared/src/timer.c ****       uint32_t driftTime = nowTime - timer->targetTime;
+ 141              		.loc 1 22 43
+ 142 0038 7B68     		ldr	r3, [r7, #4]
+ 143 003a 5B68     		ldr	r3, [r3, #4]
+ 144              		.loc 1 22 16
+ 145 003c 7A69     		ldr	r2, [r7, #20]
+ 146 003e D31A     		subs	r3, r2, r3
+ 147 0040 FB60     		str	r3, [r7, #12]
+  23:../Shared/src/timer.c ****       timer->targetTime = (nowTime + timer->waitTime) - driftTime;
+ 148              		.loc 1 23 43
+ 149 0042 7B68     		ldr	r3, [r7, #4]
+ 150 0044 1A68     		ldr	r2, [r3]
+ 151              		.loc 1 23 36
+ARM GAS  /tmp/ccjKaYQ1.s 			page 4
+
+
+ 152 0046 7B69     		ldr	r3, [r7, #20]
+ 153 0048 1A44     		add	r2, r2, r3
+ 154              		.loc 1 23 55
+ 155 004a FB68     		ldr	r3, [r7, #12]
+ 156 004c D21A     		subs	r2, r2, r3
+ 157              		.loc 1 23 25
+ 158 004e 7B68     		ldr	r3, [r7, #4]
+ 159 0050 5A60     		str	r2, [r3, #4]
+ 160              	.LBE2:
+ 161 0052 02E0     		b	.L5
+ 162              	.L6:
+  24:../Shared/src/timer.c ****     } else {
+  25:../Shared/src/timer.c ****       timer->hasElapsed = true;
+ 163              		.loc 1 25 25
+ 164 0054 7B68     		ldr	r3, [r7, #4]
+ 165 0056 0122     		movs	r2, #1
+ 166 0058 5A72     		strb	r2, [r3, #9]
+ 167              	.L5:
+  26:../Shared/src/timer.c ****     }
+  27:../Shared/src/timer.c ****   }
+  28:../Shared/src/timer.c **** 
+  29:../Shared/src/timer.c ****   return hasElapsed;
+ 168              		.loc 1 29 10
+ 169 005a FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
+ 170              	.L4:
+  30:../Shared/src/timer.c **** }
+ 171              		.loc 1 30 1
+ 172 005c 1846     		mov	r0, r3
+ 173 005e 1837     		adds	r7, r7, #24
+ 174              	.LCFI8:
+ 175              		.cfi_def_cfa_offset 8
+ 176 0060 BD46     		mov	sp, r7
+ 177              	.LCFI9:
+ 178              		.cfi_def_cfa_register 13
+ 179              		@ sp needed
+ 180 0062 80BD     		pop	{r7, pc}
+ 181              		.cfi_endproc
+ 182              	.LFE114:
+ 184              		.section	.text.Simple_Timer_Reset,"ax",%progbits
+ 185              		.align	1
+ 186              		.global	Simple_Timer_Reset
+ 187              		.syntax unified
+ 188              		.thumb
+ 189              		.thumb_func
+ 191              	Simple_Timer_Reset:
+ 192              	.LFB115:
+  31:../Shared/src/timer.c **** 
+  32:../Shared/src/timer.c **** void Simple_Timer_Reset(simpleTimer_t *timer) {
+ 193              		.loc 1 32 47
+ 194              		.cfi_startproc
+ 195              		@ args = 0, pretend = 0, frame = 8
+ 196              		@ frame_needed = 1, uses_anonymous_args = 0
+ 197 0000 80B5     		push	{r7, lr}
+ 198              	.LCFI10:
+ 199              		.cfi_def_cfa_offset 8
+ 200              		.cfi_offset 7, -8
+ 201              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccjKaYQ1.s 			page 5
+
+
+ 202 0002 82B0     		sub	sp, sp, #8
+ 203              	.LCFI11:
+ 204              		.cfi_def_cfa_offset 16
+ 205 0004 00AF     		add	r7, sp, #0
+ 206              	.LCFI12:
+ 207              		.cfi_def_cfa_register 7
+ 208 0006 7860     		str	r0, [r7, #4]
+  33:../Shared/src/timer.c ****   Simple_Timer_Setup(timer, timer->waitTime, timer->autoReset);
+ 209              		.loc 1 33 3
+ 210 0008 7B68     		ldr	r3, [r7, #4]
+ 211 000a 1968     		ldr	r1, [r3]
+ 212 000c 7B68     		ldr	r3, [r7, #4]
+ 213 000e 1B7A     		ldrb	r3, [r3, #8]	@ zero_extendqisi2
+ 214 0010 1A46     		mov	r2, r3
+ 215 0012 7868     		ldr	r0, [r7, #4]
+ 216 0014 FFF7FEFF 		bl	Simple_Timer_Setup
+  34:../Shared/src/timer.c **** }...
+ 217              		.loc 1 34 1
+ 218 0018 00BF     		nop
+ 219 001a 0837     		adds	r7, r7, #8
+ 220              	.LCFI13:
+ 221              		.cfi_def_cfa_offset 8
+ 222 001c BD46     		mov	sp, r7
+ 223              	.LCFI14:
+ 224              		.cfi_def_cfa_register 13
+ 225              		@ sp needed
+ 226 001e 80BD     		pop	{r7, pc}
+ 227              		.cfi_endproc
+ 228              	.LFE115:
+ 230              		.text
+ 231              	.Letext0:
+ 232              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 233              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 234              		.file 4 "../Shared/inc/timer.h"
+ 235              		.file 5 "../Shared/inc/delay.h"
+ARM GAS  /tmp/ccjKaYQ1.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 timer.c
+     /tmp/ccjKaYQ1.s:21     .text.Simple_Timer_Setup:00000000 $t
+     /tmp/ccjKaYQ1.s:27     .text.Simple_Timer_Setup:00000000 Simple_Timer_Setup
+     /tmp/ccjKaYQ1.s:83     .text.Simple_Timer_Elapsed:00000000 $t
+     /tmp/ccjKaYQ1.s:89     .text.Simple_Timer_Elapsed:00000000 Simple_Timer_Elapsed
+     /tmp/ccjKaYQ1.s:185    .text.Simple_Timer_Reset:00000000 $t
+     /tmp/ccjKaYQ1.s:191    .text.Simple_Timer_Reset:00000000 Simple_Timer_Reset
+                           .group:00000000 wm4.0.62e24ee945655210df7a12269291771b
+                           .group:00000000 wm4.stm32f4xx.h.54.f84a67a8e71ba9719846fdff1868826c
+                           .group:00000000 wm4.core_cm4.h.32.5f62939b60122629d60d85d0c4a14709
+                           .group:00000000 wm4._newlib_version.h.4.411db44ea2338a62eca2f0777f81481b
+                           .group:00000000 wm4.features.h.33.2eefb68b261e70563a8ac654e712169f
+                           .group:00000000 wm4._default_types.h.15.247e5cd201eca3442cbf5404108c4935
+                           .group:00000000 wm4._intsup.h.10.48bafbb683905c4daa4565a85aeeb264
+                           .group:00000000 wm4._stdint.h.10.c24fa3af3bc1706662bb5593a907e841
+                           .group:00000000 wm4.stdint.h.23.d53047a68f4a85177f80b422d52785ed
+                           .group:00000000 wm4.core_cmInstr.h.25.f50f886f2edf670cf199b35fd96f5c91
+                           .group:00000000 wm4.core_cm4_simd.h.29.b4a3fdfb606cb3b26119424324d4b963
+                           .group:00000000 wm4.core_cm4.h.153.5393ef7e6cebf34dd51ca528f9218ab3
+                           .group:00000000 wm4.stm32f4xx.h.289.fa68dcae75666a037ce29b5a1b57e3b3
+                           .group:00000000 wm4.stm32f4xx_conf.h.3.bc52e76ab6b5c9037500dbf5bb8f9be4
+                           .group:00000000 wm4.misc.h.86.a3996e7f17199502fad3c7f62e5cdb3f
+                           .group:00000000 wm4.stm32f4xx_adc.h.31.d96d805acd0f0c0392ec4633757dead3
+                           .group:00000000 wm4.stm32f4xx_can.h.31.3bb56c6436c7a6e6af1611046e81f48c
+                           .group:00000000 wm4.stm32f4xx_cryp.h.31.94bbbb19b99df10306f31e78c333a77b
+                           .group:00000000 wm4.stm32f4xx_dac.h.31.b8d45e7eaf71ee4bf01c1317dbc06f77
+                           .group:00000000 wm4.stm32f4xx_dbgmcu.h.30.70a81ec54c2707baa9fca77391eeeaaa
+                           .group:00000000 wm4.stm32f4xx_dcmi.h.30.9d0942d58c357d2eed15e044bf9b4a77
+                           .group:00000000 wm4.stm32f4xx_dma.h.31.815bb924b30b1c776b3cd51113fdfe60
+                           .group:00000000 wm4.stm32f4xx_exti.h.31.86bd18e979f97217bb1d3b80fde0231e
+                           .group:00000000 wm4.stm32f4xx_flash.h.31.74f2ed42d890f144ca7eb5ae8172f0d0
+                           .group:00000000 wm4.stm32f4xx_fsmc.h.31.ff58629e0c603fb2f9b3f00c0657fdfa
+                           .group:00000000 wm4.stm32f4xx_gpio.h.31.d9aeae10cfa353d85d475c0d4900c452
+                           .group:00000000 wm4.stm32f4xx_hash.h.31.5c109425d30f0b9cc0a26ad38182d91f
+                           .group:00000000 wm4.stm32f4xx_i2c.h.31.edf5baa611075c49ae13f56be9040be3
+                           .group:00000000 wm4.stm32f4xx_iwdg.h.31.30e376e6d8d424aab7fddd66cf691c7b
+                           .group:00000000 wm4.stm32f4xx_pwr.h.31.bb774fc1b632cb8d2ecaec8c6524d2c0
+                           .group:00000000 wm4.stm32f4xx_rcc.h.30.820e94551583d2b835c8cf3ad722e16c
+                           .group:00000000 wm4.stm32f4xx_rng.h.31.1ec493d56b7a8e5a71238519cae6dea7
+                           .group:00000000 wm4.stm32f4xx_rtc.h.31.bddeb98c63c8fa06fac80b5dd8296471
+                           .group:00000000 wm4.stm32f4xx_sdio.h.31.8c6dff42ffa718b444c3420717601ff2
+                           .group:00000000 wm4.stm32f4xx_spi.h.31.fb1b2c8214b87a47d4457633b7c31c3c
+                           .group:00000000 wm4.stm32f4xx_syscfg.h.31.5a680f88d55b7816ae613c20f199cbd9
+                           .group:00000000 wm4.stm32f4xx_tim.h.31.b1d608fbde729347e4ccf70799e654d2
+                           .group:00000000 wm4.stm32f4xx_usart.h.31.f8d29b14aa4d39de5495adcc92749d3c
+                           .group:00000000 wm4.stm32f4xx_wwdg.h.31.b45a80fa1ec64984adf786f7e489f31b
+                           .group:00000000 wm4.stm32f4xx.h.6975.cdbdae9d5de06f1ba6b770f59cbe4d6c
+                           .group:00000000 wm4.stdbool.h.29.c08aa3eec75cf5b9b5003883f43253f0
+                           .group:00000000 wm4.newlib.h.7.59e76574e8950a1900b83fbbda2ff693
+                           .group:00000000 wm4.ieeefp.h.77.5ad60f72ea25fc152400b550ac118212
+                           .group:00000000 wm4.config.h.224.10ee1ad185d877c6e334e6581faab44d
+                           .group:00000000 wm4._ansi.h.31.de524f58584151836e90d8620a16f8e8
+                           .group:00000000 wm4.stdio.h.31.7c0e28c411445f3f9c5b11accf882760
+                           .group:00000000 wm4.stddef.h.185.cbb642e1ccd385e8aa504b15cb7fb086
+                           .group:00000000 wm4.cdefs.h.49.56fd742369e655e7e8a7e365e706e208
+                           .group:00000000 wm4.stddef.h.39.6817658cc6bc4c7c8354d2009e4a5777
+ARM GAS  /tmp/ccjKaYQ1.s 			page 7
+
+
+                           .group:00000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:00000000 wm4._types.h.20.dd0d04dca3800a0d2a6129b87f3adbb2
+                           .group:00000000 wm4.stddef.h.158.6f8e08a347b1cff664332fa350bfceb3
+                           .group:00000000 wm4._types.h.127.3bdfe3ff8ea2d0985b03d9cbe93480e3
+                           .group:00000000 wm4.reent.h.18.25503cdc8b7e55dd0d6ea7b3e5af7a03
+                           .group:00000000 wm4.lock.h.2.1461d1fff82dffe8bfddc23307f6484f
+                           .group:00000000 wm4.reent.h.78.7f0775353a33c852a1479c008f68cd03
+                           .group:00000000 wm4.stdio.h.67.0cf8a9c281ab0b348aef5c02e7e48825
+                           .group:00000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:00000000 wm4.stdio.h.87.a1e20d2651f9bfb66e51bfbe849db00a
+                           .group:00000000 wm4.string.h.8.c4b8571ce60dff2817f43fec8b86aecd
+                           .group:00000000 wm4.stddef.h.158.eec8bf00b5213f43d095cb984c5f22e3
+
+UNDEFINED SYMBOLS
+getTicks

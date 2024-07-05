@@ -1,0 +1,7 @@
+device STM32F439ZI
+si 1
+speed 4000
+loadbin build/bootloader.bin 0x8000000
+r
+g
+qc
