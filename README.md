@@ -4,16 +4,16 @@ The purpose of this repository is to start from practicing a simple and basic bo
 
 ## Description
 
-The following topics will be practised here on a NUCLEO-F439ZI board:
+The following topics will be practiced here on a NUCLEO-F439ZI board:
 * A simple and basic bootloader
 * Adding a ring buffer to bootloader
 * Adding a state machine to bootloader for communication between host and flash
-* Adding a flash earaser to bootloader
+* Adding a flash eraser to bootloader
 * Adding a timeout mechanism to bootloader
 * Adding a syncing mechanism between host and bootloader
-* Adding a uploasding firmware mechanism to  bootloader
-* Adding a chaecking firmware mechanism to  bootloader
-* Adding a AES-128 signing firmware mechanism to  bootloader
+* Adding an uploading firmware mechanism to bootloader
+* Adding a checking firmware mechanism to bootloader
+* Adding an AES-128 signing firmware mechanism to bootloader
 
 ## Getting Started
 
@@ -27,7 +27,7 @@ The following topics will be practised here on a NUCLEO-F439ZI board:
 * In this Fedora 40 OS, Download [ST-LINK](https://koji.fedoraproject.org/koji/buildinfo?buildID=2389744) v1/v2 JTAG/SWD debugging/flashing tool for STM32 microcontrollers
 * After above installation, Cmake still has issue with LIBUSB, and in this Fedora 40 OS using "yum provides */libusb.h"
 * LIBUSB should be installed.
-* STM32F4 Standard Peripheral Library Expansion [STSW-STM32120](https://www.st.com/en/embedded-software/stm32-standard-peripheral-library-expansion/products.html) should be downloaded. Find the one that has "system" under "MCU Peripheral" column.
+* STM32F4 Standard Peripheral Library Expansion [STSW-STM32120](https://www.st.com/en/embedded-software/stm32-standard-peripheral-library-expansion/products.html) should be downloaded. Find the one that has "system" under "MCU Peripheral" column. Please copy "Libraries" folder next to "Bootloader" folder (the folder contains all projects in this repository).
 
 ### Installing
 
@@ -42,31 +42,31 @@ The following topics will be practised here on a NUCLEO-F439ZI board:
 ### Executing program
 
 #### A simple and basic bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
 #### Adding a ring buffer to bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
 #### Adding a state machine to bootloader for communication between host and flash
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
 #### Adding a flash earaser to bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
 #### Adding a timeout mechanism to bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
 #### Adding a syncing mechanism between host and bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+* TBD
 
-#### Adding a uploasding firmware mechanism to  bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+#### Adding an uploasding firmware mechanism to bootloader
+* TBD
 
-#### Adding a chaecking firmware mechanism to  bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+#### Adding a checking firmware mechanism to bootloader
+* TBD
 
-#### Adding a AES-128 signing firmware mechanism to  bootloader
-* First copy folder"[Libraries](https://github.com/ahasanzadeh/BareMetal/tree/main/008_VirtualComTxCharacter)" into the \Shared folder inside this prject folder.
+#### Adding a AES-128 signing firmware mechanism to bootloader
+* TBD
 
 ## Help
 

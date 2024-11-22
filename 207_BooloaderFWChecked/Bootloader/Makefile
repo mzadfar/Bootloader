@@ -47,37 +47,37 @@ Core/src/bootloaderflash.c \
 ../Shared/src/ring_buffer.c \
 ../Shared/src/crc.c \
 ../Shared/src/timer.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c \
-../Shared/Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c 
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/misc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_adc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_can.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_crc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_aes.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_des.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_cryp_tdes.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dac.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dbgmcu.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dcmi.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_dma.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_exti.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_flash.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_md5.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_hash_sha1.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_i2c.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_iwdg.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_pwr.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rng.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rtc.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_sdio.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_spi.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_syscfg.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_usart.c \
+../../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_wwdg.c 
 
 ifeq ($(SEMI_HOSTING), 0)
 C_SOURCES +=  \
@@ -144,9 +144,9 @@ AS_INCLUDES =
 C_INCLUDES =  \
 -ICore/inc \
 -I../Shared/inc \
--I../Shared/Libraries/STM32F4xx_StdPeriph_Driver/inc \
--I../Shared/Libraries/CMSIS/Device/ST/STM32F4xx/Include \
--I../Shared/Libraries/CMSIS/Include 
+-I../../../Libraries/STM32F4xx_StdPeriph_Driver/inc \
+-I../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include \
+-I../../../Libraries/CMSIS/Include 
 #-IUtilities/STM32_EVAL 
 
 # compile gcc flags

@@ -103,9 +103,9 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 #-ICore/inc \
-#-I../Shared/Libraries/CMSIS/Device/ST/STM32F4xx/Include \
-#-I../Shared/Libraries/STM32F4xx_StdPeriph_Driver/inc \
-#-I../Shared/Libraries/CMSIS/Include 
+#-I../../../Libraries/CMSIS/Device/ST/STM32F4xx/Include \
+#-I../../../Libraries/STM32F4xx_StdPeriph_Driver/inc \
+#-I../../../Libraries/CMSIS/Include 
 #-IUtilities/STM32_EVAL 
 
 # compile gcc flags
