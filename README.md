@@ -19,7 +19,7 @@ The following topics will be practiced here on a NUCLEO-F439ZI board:
 
 ### Dependencies
 
-* Host can be any OS like Fedora 40 Linux in this case or Ubuntu, Windows etc.  
+* Host can be any OS like Fedora 42 Linux in this case or Ubuntu, Windows etc.  
 * arm-none-eabi-gcc should be installed.
 * gcc should be installed.
 * cmake should be installed.
@@ -32,7 +32,7 @@ The following topics will be practiced here on a NUCLEO-F439ZI board:
 ### Installing
 
 * Check arm-none-eabi-gcc --version on a terminal. If it has not been installed, Fedora will suggest to install, and go with it.
-* Check cmake --version on a terminal. If it has not been installed, Fedora will suggest to install, and go with it. Typically, it asks for gcc installation during installing cmake if you have not installed gcc yet.
+* Check cmake --version on a terminal. If it has not been installed, Fedora will suggest installing, and go with it. Typically, it asks for gcc installation during installing cmake if you have not installed gcc yet.
 * Install [ST-LINK](https://www.st.com/en/development-tools/stsw-link007.html) latest firmware using: sudo rpm -Uhv st-stlink-udev-rules-1.0.3-2-linux-noarch.rpm
 * In this Fedora 40 OS, install [ST-LINK](https://koji.fedoraproject.org/koji/buildinfo?buildID=2389744) v1/v2 JTAG/SWD debugging/flashing tool for STM32 microcontrollers using: sudo rpm -Uhv stlink-1.7.0-7.fc40.x86_64.rpm
 * cmake has issue with LIBUSB, and in this Fedora 40 OS using "yum provides */libusb.h" command find a version of LIBUSB that suit you, and install it using (in this case): sudo dnf install libusb1-devel-1.0.27-2.fc40.x86_64
@@ -50,7 +50,7 @@ The following topics will be practiced here on a NUCLEO-F439ZI board:
 #### Adding a state machine to bootloader for communication between host and flash
 * TBD
 
-#### Adding a flash earaser to bootloader
+#### Adding a flash eraser to bootloader
 * TBD
 
 #### Adding a timeout mechanism to bootloader
@@ -59,7 +59,7 @@ The following topics will be practiced here on a NUCLEO-F439ZI board:
 #### Adding a syncing mechanism between host and bootloader
 * TBD
 
-#### Adding an uploasding firmware mechanism to bootloader
+#### Adding an uploading firmware mechanism to bootloader
 * TBD
 
 #### Adding a checking firmware mechanism to bootloader
@@ -74,7 +74,7 @@ TBD
 
 ## Authors
 
-Contributors names and contact info
+Contributor names and contact info
 
 TBD
 
